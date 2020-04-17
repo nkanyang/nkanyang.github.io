@@ -1,0 +1,73 @@
+$header-background-color:rgb(17, 223, 250);
+$header-font-color:white;
+$header-font-shadow-color:grey;
+$header-font-size:4em;
+
+header {
+    box-sizing: border-box;
+    background-color: $header-background-color;
+    background-image: linear-gradient(to bottom right,lightgrey,$header-background-color,lightgrey);
+    display: flexbox;
+    min-height: 20vh;
+    justify-content: center;
+    color:$header-font-color;
+    text-align: center;
+    padding: 10px;
+    text-shadow: 5px 5px 5px $header-font-shadow-color;
+    .headline{
+        margin-bottom: 5px;
+        font-weight: bolder;
+        font-size: $header-font-size;
+    }
+    .info{
+        margin-top: 2px;
+        font-size: 1em;
+    }
+}
+
+nav{ 
+    display: block;
+    float: left;
+    background-color: powderblue;
+    width: 20%;
+    margin: 5px;
+    .personal-info{
+        display: block;
+        min-height: 200px;
+        .selfie{
+            width: 100%;
+            border-radius: 8px;
+        }
+        .background-info{
+            color:powderblue;
+        }
+    }
+    .links{
+        display: block;
+        a{
+            display: block;
+            padding: 2px;
+            font-size: x-large;
+            font-weight: bolder;
+        }
+    }
+}
+
+
+main{
+    display: block;
+    float: left;
+    width: 78%;
+    height: 100%;
+    background-color: powderblue;
+    margin: 5px;
+
+}
+
+
+footer{
+    display: block;
+    float: left;
+    width: 100%;
+    background-color: $header-background-color;
+}
