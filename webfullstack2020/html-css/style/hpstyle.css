@@ -1,0 +1,77 @@
+header {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #11dffa;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(lightgrey), color-stop(#11dffa), to(lightgrey));
+  background-image: linear-gradient(to bottom right, lightgrey, #11dffa, lightgrey);
+  display: flexbox;
+  min-height: 20vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  text-shadow: 5px 5px 5px grey;
+}
+
+header .headline {
+  margin-bottom: 5px;
+  font-weight: bolder;
+  font-size: 4em;
+}
+
+header .info {
+  margin-top: 2px;
+  font-size: 1em;
+}
+
+nav {
+  display: block;
+  float: left;
+  background-color: powderblue;
+  width: 20%;
+  margin: 5px;
+}
+
+nav .personal-info {
+  display: block;
+  min-height: 200px;
+}
+
+nav .personal-info .selfie {
+  width: 100%;
+  border-radius: 8px;
+}
+
+nav .personal-info .background-info {
+  color: powderblue;
+}
+
+nav .links {
+  display: block;
+}
+
+nav .links a {
+  display: block;
+  padding: 2px;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+main {
+  display: block;
+  float: left;
+  width: 78%;
+  height: 100%;
+  background-color: powderblue;
+  margin: 5px;
+}
+
+footer {
+  display: block;
+  float: left;
+  width: 100%;
+  background-color: #11dffa;
+}
+/*# sourceMappingURL=hpstyle.css.map */
