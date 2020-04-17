@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        .flex-container {
+            display: flex;
+            background-color: whitesmoke;
+            flex-wrap: wrap;
+            overflow: hidden;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flex-container >div{
+            margin: 10px;
+            width: 400px;
+            height: 300px;
+            background-color: tomato;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image {
+            width: 400px;
+            height:300px;
+            object-fit:cover;
+        }
+        div .card-intro{
+            position: absolute;
+            left: 10px;
+            bottom: 20px;
+            color: whitesmoke;
+            z-index: 1;
+        }
+
+        @media screen and (max-width: 600px) {
+        .flex-container {   
+            flex-direction: column;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div>
+            <img class="card-image" src="https://www.telegraph.co.uk/content/dam/Travel/2018/October/melbourne-top.jpg?imwidth=1400" 
+            alt="melbourne-top" >
+            <div class="card-intro">
+                <h3>melbourne</h3>
+                <p>Type introduction here</p>
+            </div>
+        </div>
+        <div>
+            <img class="card-image" src="https://www.telegraph.co.uk/content/dam/Travel/2018/October/melbourne-flinders.jpg?imwidth=1240" 
+            alt="melbourne-flinders" >
+            <div class="card-intro">
+                <h3>melbourne</h3>
+                <p>Type introduction here</p>
+            </div>
+        </div>
+        <div>
+            <img class="card-image" src="https://www.telegraph.co.uk/content/dam/Travel/2018/October/melbourne-st-kilda.jpg?imwidth=1240" 
+            alt="melbourne-st-kilda" >
+            <div class="card-intro">
+                <h3>melbourne</h3>
+                <p>Type introduction here</p>
+            </div>
+        </div>
+        <div>
+            <img class="card-image" src="https://www.telegraph.co.uk/content/dam/Travel/2018/October/melbourne-collins.jpg?imwidth=1240" 
+            alt="melbourne-collins" >
+            <div class="card-intro">
+                <h3>melbourne</h3>
+                <p>Type introduction here</p>
+            </div>
+        </div>    
+      </div>
+</body>
+</html>
