@@ -1,0 +1,160 @@
+.image-card {
+  display: block;
+  width: 400px;
+  height: 500px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  overflow: auto;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  position: relative;
+  /*headline of the image + a more button*/
+  /*Here are the image and its decripion */
+  /*Here are all the links related to the card: like share expand etc.. */
+  /* Here are more detials about the card which can be unfolded and folded*/
+}
+
+.image-card:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-box-shadow: 2px 2px 2px lightgrey;
+          box-shadow: 2px 2px 2px lightgrey;
+}
+
+.image-card .headline-row {
+  display: block;
+  width: 100%;
+  height: 15%;
+  padding-top: 10px;
+}
+
+.image-card .headline-row .card-icon {
+  display: block;
+  float: left;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 3.5em;
+  color: deepskyblue;
+}
+
+.image-card .headline-row .card-title {
+  display: block;
+  float: left;
+  height: 100%;
+}
+
+.image-card .headline-row .card-title .card-title-name {
+  display: block;
+  font-size: 1.3em;
+  line-height: 1em;
+  margin-bottom: -0.4em;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.image-card .headline-row .card-title .card-title-date {
+  display: block;
+  color: darkgrey;
+  line-height: 1em;
+  font-size: 1em;
+  margin-top: -0.5em;
+}
+
+.image-card .headline-row .card-menu {
+  display: block;
+  float: right;
+  width: 15%;
+  height: 100%;
+}
+
+.image-card .image-row {
+  display: block;
+  width: 100%;
+  height: 73%;
+  overflow: auto;
+}
+
+.image-card .image-row .image {
+  display: block;
+  height: 60%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.image-card .image-row .image-decription {
+  display: block;
+  height: 40%;
+  width: 100%;
+  background-color: whitesmoke;
+  color: darkgrey;
+  font-size: large;
+  padding: 10px;
+  margin-top: 0px;
+  overflow: hidden;
+}
+
+.image-card .links-row {
+  display: block;
+  width: 100%;
+  height: 12%;
+  padding: 5px;
+}
+
+.image-card .expand-row {
+  display: none;
+  position: absolute;
+  font-size: 1.2em;
+  top: 15%;
+  background-color: rgba(245, 245, 245, 0.8);
+  height: 73%;
+  width: 100%;
+  overflow: visible;
+  border: 0 1px 1px solid lightgrey;
+  border-radius: 0 0 5px 5px;
+  margin-top: 0px;
+  padding: 20px;
+  color: #2c2b2b;
+  -webkit-transition: 1s;
+  transition: 1s;
+  overflow: hidden;
+}
+
+/*button style on the card*/
+.card-btn {
+  width: 50px;
+  background-color: whitesmoke;
+  font-size: 24px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: none;
+  float: left;
+  margin: 0 2px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.card-btn:hover {
+  background-color: #e4f0f8;
+  font-size: 30px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: red;
+}
+
+.card-btn:active {
+  background-color: darkgray;
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+/*# sourceMappingURL=imgcard.css.map */
