@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Calculator</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .main-page {
+      background: beige;
+      display: block;
+      width: 600px;
+      margin: auto;
+    }
+
+    .input-box {
+      background-color:plum;
+      margin-bottom: 50px;
+      padding: 20px;
+    }
+
+    .tex-table {
+      margin-top: 50px;
+      background-color: lightgray;
+      margin: auto;
+    }
+
+    .calculator {
+      background-color: lightseagreen;
+    }
+
+    button{
+      width: 100px;
+      height: 30px;
+      color:orangered;
+    }
+
+    #tex-to-pay{
+      display: inline-block;
+      border: navajowhite;
+      color:green;
+      background-color:whitesmoke;
+      width: 200px;
+      height: 1.5em;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Annual Income Tex Calculator</h1>
+  </header>
+  <main class="main-page">
+    <section class="input-box">
+      <label for="annual-income">Annual Income:</label>
+      <input id ="annual-income" type="number" value="0">
+      <button type="button" onclick="startCalculate()">Calculate</button>
+
+      <br>
+      <label for="tex-to-pay">Tex to Pay:</label>
+      <div id="tex-to-pay">$0</div>
+      <button type="button" onclick="reset()">Reset</button><br>
+  
+    </section>
+
+    <section>
+      <table class="tex-table">
+        <tr>
+          <th>Income thresholds</th>
+          <th>Rate</th>
+          <th>Tex payable on this income</th>
+        </tr>
+        <tr>
+          <td>$0 - $18,200</td>
+          <td>0%</td>
+          <td>Nil</td>
+        </tr>
+        <tr>
+          <td>$18,201 - $37,000</td>
+          <td>19%</td>
+          <td>19c for each $1 over $18,200</td>
+        </tr>
+        <tr>
+          <td>$37,001 - $90,000</td>
+          <td>32.5%</td>
+          <td>$3,572 plus 32.5% of amounts over $37,000</td>
+        </tr>
+        <tr>
+          <td>$90,001 - $180,000</td>
+          <td>37%</td>
+          <td>$20,797 plus 37% of amounts over $90,000</td>
+        </tr>
+        <tr>
+          <td>$180,001 and over</td>
+          <td>45%</td>
+          <td>$54,096 plus 45% of amounts over $180,000</td>
+        </tr>
+      </table>
+    </section>
+
+  </main>
+
+  <script src="../js/texcalculator.js"></script>
+  <script>
+    function startCalculate(){
+      var income = document.getElementById("annual-income").value;
+      var tex=texCalculator(income);
+      document.getElementById("tex-to-pay").innerHTML="$"+tex;
+    }
+    function reset(){
+      document.getElementById("annual-income").value=0;
+      document.getElementById("tex-to-pay").innerHTML="$0";
+    }
+  </script>
+</body>
+</html>
