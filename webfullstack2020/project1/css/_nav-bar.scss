@@ -29,39 +29,31 @@
         color:rgb(97, 95, 95);
         text-align: center;
         text-decoration: none;
-        position: relative;
         &:hover{
           color: black;
           cursor: pointer;
         }
         &::after{
           content: "";
-          position: absolute;
-          left: 0;
-          bottom: -10px;
+          display: block;
+          margin: auto;
+          margin-top: 10px;
           height: 2px;
-          width: 100%;
-          background-image: linear-gradient(to left,white,#2eca7f,white);
-          transform-origin:50% 0;
-          transform: scale3d(0,1,1);
+          width: 0;
+          background-color:#2eca7f;
           transition:all 0.3s ease-in-out;
         }
         &:hover::after{
-          transform:scale3d(1,1,1);
+          width: 70%;
         }
       }
       .active{
         color: rgb(0, 0, 0);
-        &::before{
-          content: "";
-          position: absolute;
-          left: 0;
-          bottom: -10px;
-          height: 2px;
-          width: 100%;
-          background-image: linear-gradient(to left,white,#2eca7f,white);
+        &::after{
+          width: 70%;
         }
       }
+      
     }
   }
 }
