@@ -1,0 +1,38 @@
+@import "./info-card";
+@import "./nav-bar";
+@import "./text-style";
+
+$site-font:'Montserrat', Helvetica, sans-serif;
+
+* {
+	box-sizing: border-box;
+	font-family: $site-font;
+}
+
+body {
+	position: relative;
+	margin: 0;
+	height: 90vh;
+	background-color: #f5f5f5;
+	background-image: url(https://hades217.github.io/images/main_bg.png);
+	background-position: center center;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.page-card {
+	display: flex;
+	width: 1032px;
+	margin: auto;
+	flex-direction:column;
+}
+
+footer {
+	position: absolute;
+	margin-top: 30px;
+	width: 100%;
+	text-align: center;
+	bottom: 0;
+	z-index: -1;
+}
