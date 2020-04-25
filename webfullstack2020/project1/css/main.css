@@ -8,7 +8,6 @@
   overflow: hidden;
   -ms-flex-line-pack: center;
       align-content: center;
-  border: 1px solid lightgrey;
   border-radius: 15px;
   -webkit-box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.1);
