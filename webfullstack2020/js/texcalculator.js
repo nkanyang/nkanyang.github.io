@@ -39,8 +39,8 @@ function texCalculator(income) {
     if(income > curItem.min){
       if(income > curItem.max) continue;
 
-    texToPay = (income - curItem.min)*curItem.rate + curItem.base;
-    return texToPay;
+      texToPay = (income - curItem.min)*curItem.rate + curItem.base;
+      return texToPay;
     }
   }
 

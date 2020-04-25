@@ -1,12 +1,11 @@
+@import "./variables";
 
 .info-card {
 	width: 100%;
-	background-color:plum;
 	display: block;
 	overflow: hidden;
 	align-content: center;
-	border: 1px solid black;
-	border-radius: 8px;
+	border: 1px solid lightgrey;
 	border-radius: 15px;
 	box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.1);
 
@@ -14,7 +13,7 @@
 		width: 100%;
 		height: 305px;
 		position: relative;
-		background-color: #2eca7f;
+		background-color:$site-theme-color;
 		background-image: url(https://hades217.github.io/images/sp_main_bg.png);
 		background-position: center center;
 		background-attachment: scroll;
@@ -40,7 +39,6 @@
 		}
 
 		.card-title{
-			border: 1px solid black;
 			display: flex;
 			float: right;
 			height: 100%;
@@ -57,44 +55,81 @@
 				font-weight: 700;
 			}
 			.card-title-title{
-				border: 1px solid black;
 				margin:auto;
 				margin-top: 0px;
 				color: white;
 				font-size: 18px;
 			}
 			.card-title-links{
-				margin-top: 20px;
-				margin:auto;
-				background-color: mediumseagreen;
+				width: 100%;;
+				display: flex;
+				justify-content: center;
+				a {
+					width: 36px;
+    			height: 36px;
+					font-size: 16px;
+					color:darkgrey;
+					text-decoration: none;
+					background-color: white;
+					border-radius: 50%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin: 2px;
+				}
 			}
 		}
 	}
 
 	.card-content{
 		width: 100%;
-		background-color:purple;
 		display: flex;
-		justify-content: space-evenly;
-		height: 233px;
-		padding: 20px;
-		padding-top: 50px;
+		justify-content: space-between;
+		padding: 40px 30px 50px;
 
 		.about-me{
 			display: block;
 			width: 350px;
-			background-color: seashell;
+			flex-basis: 50%;
+			padding: 10px;
 			.block-title{
-				font-size: large;
+				font-size: 21px;
+				span {
+					color: $site-theme-color;
+				}
 			}
 			.block-text{
 				overflow: hidden;
+				font-size: $text-font-size
 			}
 		}
 		.contact-info{
 			display: block;
 			width: 350px;
-			background-color: slateblue;
+			flex-basis: 50%;
+			padding: 10px;
+			font-size: $text-font-size;
+
+			.info-table{
+				margin-top: 20px;
+				text-align: left;
+				th{
+					font-weight: normal;
+					width: 120px;
+					height:24px;
+				}
+				td{
+					color:grey;
+					a{
+						text-decoration: none;
+						color:$site-theme-color;
+						&:hover {
+							color: orangered;
+						}
+					}
+				}
+
+			}
 		}
 	}
 }

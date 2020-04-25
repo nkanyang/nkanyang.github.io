@@ -1,12 +1,14 @@
+/*main color of the site*/
+/*the font family applied to the site*/
+/*main color of the site*/
+/*the font family applied to the site*/
 .info-card {
   width: 100%;
-  background-color: plum;
   display: block;
   overflow: hidden;
   -ms-flex-line-pack: center;
       align-content: center;
-  border: 1px solid black;
-  border-radius: 8px;
+  border: 1px solid lightgrey;
   border-radius: 15px;
   -webkit-box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.1);
@@ -46,7 +48,6 @@
 }
 
 .info-card .card-head .card-title {
-  border: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -72,7 +73,6 @@
 }
 
 .info-card .card-head .card-title .card-title-title {
-  border: 1px solid black;
   margin: auto;
   margin-top: 0px;
   color: white;
@@ -80,46 +80,103 @@
 }
 
 .info-card .card-head .card-title .card-title-links {
-  margin-top: 20px;
-  margin: auto;
-  background-color: mediumseagreen;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.info-card .card-head .card-title .card-title-links a {
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  color: darkgrey;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2px;
 }
 
 .info-card .card-content {
   width: 100%;
-  background-color: purple;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  height: 233px;
-  padding: 20px;
-  padding-top: 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 40px 30px 50px;
 }
 
 .info-card .card-content .about-me {
   display: block;
   width: 350px;
-  background-color: seashell;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding: 10px;
 }
 
 .info-card .card-content .about-me .block-title {
-  font-size: large;
+  font-size: 21px;
+}
+
+.info-card .card-content .about-me .block-title span {
+  color: #2eca7f;
 }
 
 .info-card .card-content .about-me .block-text {
   overflow: hidden;
+  font-size: 15px;
 }
 
 .info-card .card-content .contact-info {
   display: block;
   width: 350px;
-  background-color: slateblue;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.info-card .card-content .contact-info .info-table {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.info-card .card-content .contact-info .info-table th {
+  font-weight: normal;
+  width: 120px;
+  height: 24px;
+}
+
+.info-card .card-content .contact-info .info-table td {
+  color: grey;
+}
+
+.info-card .card-content .contact-info .info-table td a {
+  text-decoration: none;
+  color: #2eca7f;
+}
+
+.info-card .card-content .contact-info .info-table td a:hover {
+  color: orangered;
 }
 
 /* style of the nav bar*/
+/*main color of the site*/
+/*the font family applied to the site*/
 .nav-bar {
   width: 100%;
   height: 80px;
@@ -199,6 +256,8 @@
 }
 
 /*text style applied to the site*/
+/*main color of the site*/
+/*the font family applied to the site*/
 .site-title {
   color: #49515d;
   font-size: 20px;
@@ -239,14 +298,18 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-footer {
-  position: absolute;
-  margin-top: 30px;
-  width: 100%;
+.page-footer {
+  margin: 30px 0 20px;
   text-align: center;
-  bottom: 0;
-  z-index: -1;
+  color: grey;
+}
+
+.page-footer span {
+  color: #2eca7f;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,4 +1,5 @@
 /* style of the nav bar*/
+@import "./variables";
 
 .nav-bar{
   width: 100%;
@@ -40,7 +41,7 @@
           margin-top: 10px;
           height: 2px;
           width: 0;
-          background-color:#2eca7f;
+          background-color:$site-theme-color;
           transition:all 0.3s ease-in-out;
         }
         &:hover::after{
@@ -53,7 +54,7 @@
           width: 70%;
         }
       }
-      
+
     }
   }
 }
