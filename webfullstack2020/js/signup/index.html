@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h2>Register With us</h2>
+    </div>
+    <div>
+      <form id="form" class="form" onsubmit="validateInput(event)">
+        <div class="form-control">
+          <label for="user-name">Username</label>
+          <input id="user-name" type="text" placeholder="Enter username" maxlength="32">
+          <small></small>
+        </div>
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input id="email" type="email">
+          <small></small>
+        </div>
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input id="password" type="password" >
+          <small></small>
+        </div>
+        <div class="form-control">
+          <label for="password2">Confirm Password</label>
+          <input id="password2" type="password" >
+          <small></small>
+        </div>
+        <div class="form-control">
+          <input type="submit">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('form');
+    const username = document.getElementById('user-name');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const password2 = document.getElementById('password2');
+
+    const showSuccess = (input)=>{
+      const formControl = input.parentElement;
+      formControl.className = "form-control success";
+    }
+
+    const showError = (input,errorMessage)=>{
+      const formControl = input.parentElement;
+      formControl.className = "form-control error";
+      const small = formControl.querySelector("small");
+      small.innerText = errorMessage;
+    }
+
+    function checkUsername(username){
+      let name = username.value.trim();
+      if(name.length < 4){
+        showError(username,"Name too short! At lease 8 charactors.");
+      }
+      else{
+        showSuccess(username);
+      }
+    }
+
+    const checkEmail = (email) => {
+      const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(regex.test(email.value.trim())){
+        showSuccess(email);
+      }else{
+        showError(email,"Invalidate email address!");
+      }
+    }
+
+    const checkPassword = (password) => {
+      const pwd=password.value;
+      if(pwd.length <8){
+        showError(password,"At least 8 charactors!");
+      }else{
+        showSuccess(password);
+      }
+    }
+
+    const checkPasswordMatch = (password,password2) => {
+      const pwd2 = password2.value;
+      if(!pwd2){
+        showError(password2,"Can not be null!");
+        return;
+      }
+      if(password.value !== pwd2){
+        showError(password2,"Password not match!");
+        password2.value='';
+        return;
+      }
+      showSuccess(password2);
+    }
+
+    function validateInput(ev){
+      ev.preventDefault();
+
+      checkUsername(username);
+      checkEmail(email);
+      checkPassword(password);
+      checkPasswordMatch(password,password2);
+    }
+
+  </script>
+</body>
+</html>
