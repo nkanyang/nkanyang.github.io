@@ -59,7 +59,7 @@
       small.innerText = errorMessage;
     }
 
-    function checkUsername(username){
+    const checkUsername = (username) => {
       let name = username.value.trim();
       if(name.length < 4){
         showError(username,"Name too short! At lease 8 charactors.");
