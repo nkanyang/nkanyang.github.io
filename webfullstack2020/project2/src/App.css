@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(120deg, rgb(92, 92, 236), rgb(180, 140, 245), rgb(253, 150, 82));
+}
+
+footer {
+  margin-top: 20px;
+  color: white;
+}
