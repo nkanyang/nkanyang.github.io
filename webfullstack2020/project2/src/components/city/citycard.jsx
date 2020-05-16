@@ -7,7 +7,7 @@ function City({children,onClick,active}){
     e.preventDefault();
     onClick(children);
   };
-  console.log(active);
+  //console.log(active);
   return(
     <div className={active ? styles.citytagactive:styles.citytag}>
     {/* <div className={styles.citytag}> */}
