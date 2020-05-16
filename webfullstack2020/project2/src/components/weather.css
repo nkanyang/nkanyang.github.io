@@ -4,3 +4,25 @@
   border-radius: 10px;
   overflow: hidden;
 }
+
+
+.loadding {
+  width: 2rem;
+  height: 2rem;
+  margin: 2rem;
+  border-radius: 50%;
+  border: 0.3rem solid rgba(151, 159, 208, 0.3);
+  border-top-color: #979fd0;
+  -webkit-animation: 1.5s spin infinite linear;
+          animation: 1.5s spin infinite linear;
+}
+
+.loadding.multi {
+  border-bottom-color: #979fd0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -12,38 +12,37 @@ class Weather extends React.Component{
     super(props);
     this.state={
           city: "Melbourne",
-          today: "https://api.openweathermap.org/data/2.5/weather?q=Melbourne,au&appid=22fbcfec719c609ea81403ee2aeac5de&units=metric",
-          forecast: "https://api.openweathermap.org/data/2.5/forecast?q=Melbourne,au&appid=22fbcfec719c609ea81403ee2aeac5de&units=metric"
+          weatherToday: {},
+          forecast: {},
+          todayDataReady: false,
+          forecastReady: false
+
     }
     this.chooseCity = this.chooseCity.bind(this);
-    // this.getWeather("Melbourne");
   }
 
-  async getWeather(city){
-    const apiCall = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
-    const data = await apiCall.json();
-    const count = data.cnt;
-    for(let i = 0; i < count; i+8){
-      console.log(data.list[i]);
-    }
+  getWeather(city){
+    // const apiToday = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
+    // const weatherToday = await apiToday.json();
+    // const apiForecast = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}&units=metric`);
+    // const forecast = await apiForecast.json();
+    console.log(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`)
+       .then(response => response.json())
+        .then(data => this.setState({
+          "weatherToday": data,
+          "todayDataReady": true
+        }))
+        .catch(error => console.log(error));
 
-    // console.log("getWeather:"+data.main.temp);
-    // let weatherData = {"temp":0};
-    // weatherData.temp = 
-    // data.main.temp;
-    // console.log(weatherData);
-    // this.setState({today:weatherData});
-
-    // console.log(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
-    // fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`)
-    //    .then(response => response.json())
-    //     .then(data => this.setState({today:data}))
-    //     .catch(error => console.log(error));
-
-    // fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}&units=metric`)
-    //     .then(response => response.json())
-    //       .then(data => this.setState({forecast:data}))
-    //       .catch(error => console.log(error));
+    console.log(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}&units=metric`);
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}&units=metric`)
+    .then(response => response.json())
+      .then(data => this.setState({
+        "forecast": data,
+        "forecastReady": true
+      }))
+      .catch(error => console.log(error));   
 }
 
   chooseCity(city){
@@ -52,23 +51,25 @@ class Weather extends React.Component{
       console.log("no need to refresh");
       return;
     }
-    //get data here
 
-    const todayUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`;
-    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}&units=metric`;
+    this.getWeather(city);
     this.setState({
       "city":city,
-      "today":todayUrl,
-      "forecast":forecastUrl
+      "todayDataReady": false,
+      "forecastReady": false
     });
+  }
+
+  componentDidMount(){
+    this.getWeather(this.state.city);
   }
 
   render(){
     return(
       <div className="weather">
         <CityCard onClick={this.chooseCity} active={this.state.city}></CityCard>
-        <Today url={this.state.today}/>
-        <Forecast url={this.state.forecast}/>
+        <Today data={this.state.todayDataReady?this.state.weatherToday:undefined}/>
+        <Forecast data={this.state.forecastReady?this.state.forecast:undefined}/>
       </div>
     );
   }
